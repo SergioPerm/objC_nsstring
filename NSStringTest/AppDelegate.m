@@ -22,6 +22,65 @@
     self.window.rootViewController = [[UIViewController alloc] init];
     [self.window makeKeyAndVisible];
 
+//    NSString* str1 = @"String1";
+//    NSString* str2 = @"String2";
+//
+//    NSArray* array = [NSArray arrayWithObjects:str1, str2, nil];
+//
+//    for (NSString* str in array) {
+//
+//        if ([str isEqualToString:@"String1"]) {
+//            NSLog(@"Yes");
+//        }
+//
+//    }
+//
+//    NSRange range = [str1 rangeOfString:@"iNg"];
+//
+//    if (range.location != NSNotFound) {
+//        NSLog(@"%@", NSStringFromRange(range));
+//    } else {
+//        NSLog(@"not found");
+//    }
+//
+//    //поиск без регистра
+//    NSRange range2 = [str1 rangeOfString:@"iNg" options:NSCaseInsensitiveSearch | NSBackwardsSearch];
+//
+//    if (range2.location != NSNotFound) {
+//        NSLog(@"%@", NSStringFromRange(range2));
+//    } else {
+//        NSLog(@"not found");
+//    }
+    
+    NSString* text = @"sdfsdf sdfsd sdfsdfsd opop sdf sdf sdf 123 sdf s123df sdf 123sdf sdf sdf23 ewf sdf sdf sdf";
+    
+    //text = [];
+    
+    //text = [text substringWithRange:NSMakeRange(15, 25)];
+    
+//    NSRange range = [text rangeOfString:@"opop"];
+//
+//    if (range.location != NSNotFound) {
+//        text = [text substringToIndex:range.location];
+//    }
+    
+    NSArray* strArr = [text componentsSeparatedByString:@" "];
+    
+    NSInteger countSdf = 0;
+    for (NSString* str in strArr) {
+        
+        NSString* strWithoutSpaces = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+        
+        if ([strWithoutSpaces isEqualToString:@"sdf"]) {
+            countSdf++;
+        }
+        
+    }
+
+    NSLog(@"count sdf: %d", countSdf);
+    
+    //NSLog(@"%@", text);
+    
     return YES;
 }
 
